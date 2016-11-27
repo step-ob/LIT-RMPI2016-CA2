@@ -7,6 +7,7 @@ import ddf.minim.effects.*;
 Movie runningMovie;
 Minim songBackground;
 AudioPlayer song;
+XML polarData;
 
 
 void setup() 
@@ -21,6 +22,8 @@ void setup()
   song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 320);
   song.play();
   song.loop();
+  
+  polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
 }
 
 
