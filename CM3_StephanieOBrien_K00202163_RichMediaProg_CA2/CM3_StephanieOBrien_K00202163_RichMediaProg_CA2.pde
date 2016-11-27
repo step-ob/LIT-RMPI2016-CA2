@@ -21,7 +21,6 @@ void setup()
   song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 320);
   song.play();
   song.loop();
-  
 }
 
 
@@ -34,4 +33,19 @@ void draw ()
 void movieEvent (Movie runningMovie) 
 {
   runningMovie.read();
+}
+
+void keyPressed ()
+{
+  if  (key == 'm' || key == 'M' )
+  {
+    if (song.isPlaying () )
+    {
+      song.pause ();
+    }
+    else
+    {
+      song.play();
+    }
+  }
 }
