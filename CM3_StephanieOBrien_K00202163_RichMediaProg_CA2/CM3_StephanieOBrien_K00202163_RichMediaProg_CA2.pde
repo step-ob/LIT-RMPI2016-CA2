@@ -27,6 +27,12 @@ void setup()
   
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
   children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
+  
+  for (int i=0; i<children.length;i++)
+  {
+    String v = (children[i].getChild("HeartRateBpm").getContent());
+    println(v);
+  }
 }
 
 
