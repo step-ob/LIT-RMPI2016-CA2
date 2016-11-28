@@ -31,7 +31,9 @@ void setup()
   for (int i=0; i<children.length;i++)
   {
     String v = (children[i].getChild("HeartRateBpm").getContent());
-    println(v);
+    //println(v);
+    radius = Integer.parseInt(v);
+    println(radius);
   }
 }
 
