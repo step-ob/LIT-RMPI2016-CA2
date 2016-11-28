@@ -8,6 +8,8 @@ Movie runningMovie;
 Minim songBackground;
 AudioPlayer song;
 XML polarData;
+XML [] children;
+int radius;
 
 
 void setup() 
@@ -24,6 +26,7 @@ void setup()
   song.loop();
   
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
+  children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
 }
 
 
