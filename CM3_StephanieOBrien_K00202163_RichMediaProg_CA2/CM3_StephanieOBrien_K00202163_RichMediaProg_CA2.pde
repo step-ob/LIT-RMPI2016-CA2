@@ -11,6 +11,7 @@ XML polarData;
 XML [] children;
 int [] radius;
 int j;
+PFont font;
 
 
 void setup() 
@@ -46,6 +47,8 @@ void draw ()
   image(runningMovie, 0, 0);
   heartBeat ();
   
+  font = loadFont ("bromello-32.vlw");
+  textFont(font, 32);
   text("Stephanie O Brien", width/2-200, height/14);
   text("Heat Rate Bpm ", width/2-150, height/8);
 }
