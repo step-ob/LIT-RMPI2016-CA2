@@ -13,6 +13,8 @@ int [] radius;
 int j;
 int k;
 PFont font;
+PImage mute1;
+PImage mute2;
 
 
 void setup() 
@@ -27,6 +29,9 @@ void setup()
   song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 320);
   song.play();
   song.loop();
+  
+  mute2 = loadImage("mute2.png");
+  mute1 = loadImage("mute1.png");
   
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
   children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
@@ -46,6 +51,9 @@ void setup()
 void draw ()
 {
   image(runningMovie, 0, 0);
+  
+  image(mute2, 0, 0);
+  
   heartBeat ();
   
   font = loadFont ("bromello-32.vlw");
