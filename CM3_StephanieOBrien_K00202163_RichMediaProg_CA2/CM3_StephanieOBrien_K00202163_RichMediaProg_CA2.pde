@@ -1,8 +1,8 @@
+//Import the video library
 import processing.video.*;
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
 
+//Import Minim library for audio - everything within the library
+import ddf.minim.*;
 
 Movie runningMovie;
 Minim songBackground;
