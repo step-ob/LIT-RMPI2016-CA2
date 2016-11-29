@@ -63,22 +63,3 @@ void keyPressed ()
     }
   }
 }
-
-/* 
-
-XML [] tps = polarData.getChild("Activites").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
-
-for (int i=0; i<tps.length; i++)
-{
-  XML hr = tps [i].getChild("HeartRateBpm");
-  
-  if (hr! = null)
-  {
-    String v = hr.getChild("Value").getChildren ();
-    
-    (int) v
-    infogeo.parseInf(v);
-  }
-}
-
-*/
