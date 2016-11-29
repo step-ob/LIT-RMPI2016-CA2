@@ -11,6 +11,7 @@ XML polarData;
 XML [] children;
 int [] radius;
 int j;
+int k;
 PFont font;
 
 
@@ -49,8 +50,19 @@ void draw ()
   
   font = loadFont ("bromello-32.vlw");
   textFont(font, 32);
+  smooth();
+  fill(100, 197, 221);
   text("Stephanie O Brien", width/2-200, height/14);
-  text("Heat Rate Bpm ", width/2-150, height/8);
+  text("Heat Rate Bpm " + radius[k], width/2-150, height/8);
+  
+  if (k <= children.length-2)
+  {
+    k++;
+  }
+  else
+  {
+    k=0;
+  }
 }
 
 
@@ -76,8 +88,8 @@ void keyPressed ()
 
 void heartBeat () 
 {
+  fill (100, 197, 221, radius[j]);
   ellipse (width/2, height/2, radius[j], radius[j]);
-  fill (255);
   noStroke();
   
   if (j <= children.length-2)
