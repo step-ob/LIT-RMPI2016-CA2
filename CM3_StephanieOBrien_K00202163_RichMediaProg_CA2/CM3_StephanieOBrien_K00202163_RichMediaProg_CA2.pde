@@ -74,7 +74,7 @@ void heartBeat ()
   fill (255);
   noStroke();
   
-  if (j <= children.length-1)
+  if (j <= children.length-2)
   {
     j++;
   }
