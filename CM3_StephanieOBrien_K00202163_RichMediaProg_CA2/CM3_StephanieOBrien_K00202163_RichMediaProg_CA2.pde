@@ -30,7 +30,13 @@ void setup()
   
   for (int i=0; i<children.length;i++)
   {
-    String v = (children[i].getChild("HeartRateBpm").getContent());
+    try {
+      Thread.sleep(50);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+    String v = (children[i].getChild("HeartRateBpm").getContent() );
     //println(v);
     radius = Integer.parseInt(v.trim());
     println(radius);
