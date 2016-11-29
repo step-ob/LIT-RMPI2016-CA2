@@ -10,7 +10,7 @@ Movie runningMovie;
 Minim songBackground;
 //Declare object
 AudioPlayer song;
-//Declare 
+//Declare object
 XML polarData;
 //Declare an array globally (we will create and initialise the array later)
 XML [] children;
@@ -74,6 +74,7 @@ void draw ()
   //function image to draw image name, x position, y position
   image(mute2, 1800, 970);
 
+  //call the function named heartBeat
   heartBeat ();
   
   //loading font from data folder 
@@ -99,6 +100,7 @@ void draw ()
 
 void movieEvent (Movie runningMovie) 
 {
+  //
   runningMovie.read();
 }
 
