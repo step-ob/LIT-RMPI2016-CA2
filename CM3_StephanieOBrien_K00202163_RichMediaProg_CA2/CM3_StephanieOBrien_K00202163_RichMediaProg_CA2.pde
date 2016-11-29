@@ -86,7 +86,8 @@ void draw ()
   text("Stephanie O Brien", width/2-180, height/14);
   fontHeart = loadFont("Garamond-Bold-48.vlw");
   textFont(fontHeart, 36);
-  text("Heat Rate Bpm " + radius[k], width/2-232, height/8);
+  text("Heart Rate Beat per minute: " + radius[k], width/2-250, height/8);
+  text("over 5 minute ~ starting at 63 finishing up to 138", width/2-380, height/3+600);
   //the k int inside the arrary to loop, from 0 to the length of the children array
   if (k <= children.length-2)
   {
@@ -127,11 +128,11 @@ void keyPressed ()
 
 void heartBeat () 
 {
+  noStroke();
   //changing the colour its alpha value with the radius array
   fill (100, 197, 221, radius[j]);
   //changing the size of the shape with the radius array
   ellipse (width/2, height/2, radius[j]*5, radius[j]*5);
-  noStroke();
   //the j int inside the arrary to loop, from 0 to the length of the children array
   if (j <= children.length-2)
   {
