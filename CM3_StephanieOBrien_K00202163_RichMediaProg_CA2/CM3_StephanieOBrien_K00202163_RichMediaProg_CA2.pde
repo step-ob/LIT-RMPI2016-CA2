@@ -51,9 +51,9 @@ void setup()
 void draw ()
 {
   image(runningMovie, 0, 0);
-  
-  image(mute2, 0, 0);
-  
+
+  image(mute2, 1800, 970);
+
   heartBeat ();
   
   font = loadFont ("bromello-32.vlw");
@@ -86,6 +86,8 @@ void keyPressed ()
     if (song.isPlaying () )
     {
       song.pause ();
+      mute2.resize(0, 1);
+
     }
     else
     {
