@@ -32,7 +32,7 @@ void setup()
   {
     String v = (children[i].getChild("HeartRateBpm").getContent());
     //println(v);
-    radius = Integer.parseInt(v);
+    radius = Integer.parseInt(v.trim());
     println(radius);
   }
 }
