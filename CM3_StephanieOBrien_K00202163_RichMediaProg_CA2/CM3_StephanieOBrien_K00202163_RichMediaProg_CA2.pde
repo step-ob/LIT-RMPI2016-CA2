@@ -22,10 +22,8 @@ int j;
 int k;
 //Declare variable 'font' of type PFont
 PFont font;
-//Declare variable 'mute1' of type PImage
-PImage mute1;
-//Declare variable 'mute2' of type PImage
-PImage mute2;
+//Declare variable 'muteImg' of type PImage
+PImage muteImg;
 
 
 void setup() 
@@ -46,9 +44,7 @@ void setup()
   song.loop();
   
   //Assign 'mute2' a value which is loading an image from data folder
-  mute2 = loadImage("mute2.png");
-  //Assign 'mute1' a value which is loading an image from data folder
-  mute1 = loadImage("mute1.png");
+  muteImg = loadImage("mute2.png");
   
   //loadXML loads the xml from data within in folder, which I initally got from Polar.com
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
@@ -72,7 +68,7 @@ void draw ()
   //function image to draw movie name, x position, y position
   image(runningMovie, 0, 0);
   //function image to draw image name, x position, y position
-  image(mute2, 1800, 970);
+  image(muteImg, 1800, 970);
 
   //call the function named heartBeat
   heartBeat ();
@@ -112,10 +108,14 @@ void keyPressed ()
     if (song.isPlaying () )
     {
       song.pause ();
+      //change the muteImg load image from data folder - music logo off
+      muteImg = loadImage("mute1.png");
     }
     else
     {
       song.play();
+      //change the muteImg load image from data folder - music logo on
+      muteImg = loadImage("mute2.png");
     }
   }
 }
