@@ -9,7 +9,8 @@ Minim songBackground;
 AudioPlayer song;
 XML polarData;
 XML [] children;
-int radius;
+int [] radius;
+int j;
 
 
 void setup() 
@@ -28,12 +29,14 @@ void setup()
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
   children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
   
+  radius = new int[children.length];
+  
   for (int i=0; i<children.length;i++)
   {
-    String v = (children[i].getChild("HeartRateBpm").getContent() );
+    radius [i] = (children[i].getChild("HeartRateBpm").getChild("Vale").getIntContent());
     //println(v);
-    radius = Integer.parseInt(v.trim());
-    println(radius);
+    //radius = Integer.parseInt(v.trim());
+    println(radius[i]);
   }
 }
 
@@ -67,7 +70,16 @@ void keyPressed ()
 
 void heartBeat () 
 {
-  ellipse (width/2, height/2, radius, radius);
+  ellipse (width/2, height/2, radius[j], radius[j]);
   fill (255);
   noStroke();
+  
+  if (j <= children.length)
+  {
+    j++;
+  }
+  else
+  {
+    j=0;
+  }
 }
