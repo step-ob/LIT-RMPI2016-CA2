@@ -45,6 +45,9 @@ void draw ()
 {
   image(runningMovie, 0, 0);
   heartBeat ();
+  
+  text("Stephanie O Brien", width/2-200, height/14);
+  text("Heat Rate Bpm ", width/2-150, height/8);
 }
 
 
