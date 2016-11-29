@@ -49,7 +49,7 @@ void draw ()
   heartBeat ();
   
   font = loadFont ("bromello-32.vlw");
-  textFont(font, 32);
+  textFont(font, 52);
   smooth();
   fill(100, 197, 221);
   text("Stephanie O Brien", width/2-200, height/14);
@@ -89,7 +89,7 @@ void keyPressed ()
 void heartBeat () 
 {
   fill (100, 197, 221, radius[j]);
-  ellipse (width/2, height/2, radius[j], radius[j]);
+  ellipse (width/2, height/2, radius[j]*5, radius[j]*5);
   noStroke();
   
   if (j <= children.length-2)
