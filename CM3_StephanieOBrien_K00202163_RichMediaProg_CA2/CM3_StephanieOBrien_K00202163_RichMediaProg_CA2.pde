@@ -22,12 +22,15 @@ int j;
 int k;
 //Declare variable 'font' of type PFont
 PFont font;
+//Declare variable 'fontHeart' of type PFont
+PFont fontHeart;
 //Declare variable 'muteImg' of type PImage
 PImage muteImg;
 
 
 void setup() 
 {
+  frameRate(10);
   //set the window size
   size (1920,1080);
   //set the background color to black;
@@ -39,7 +42,7 @@ void setup()
   
   songBackground = new Minim(this);
   //Load a sound file from data folder and plays it back in loop 
-  song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 320);
+  song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav");
   song.play();
   song.loop();
   
@@ -80,8 +83,10 @@ void draw ()
   smooth();
   fill(100, 197, 221);
   //function text displays character within " ", x position, y position 
-  text("Stephanie O Brien", width/2-200, height/14);
-  text("Heat Rate Bpm " + radius[k], width/2-150, height/8);
+  text("Stephanie O Brien", width/2-180, height/14);
+  fontHeart = loadFont("Garamond-Bold-48.vlw");
+  textFont(fontHeart, 36);
+  text("Heat Rate Bpm " + radius[k], width/2-232, height/8);
   //the k int inside the arrary to loop, from 0 to the length of the children array
   if (k <= children.length-2)
   {
