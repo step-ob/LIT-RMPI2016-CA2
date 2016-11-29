@@ -7,8 +7,11 @@ import ddf.minim.effects.*;
 Movie runningMovie;
 Minim songBackground;
 AudioPlayer song;
+//Declare 
 XML polarData;
+//Declare an array globally (we will create and initialise the array later)
 XML [] children;
+//Declare an array globally (we will create and initialise the array later)
 int [] radius;
 int j;
 int k;
@@ -19,7 +22,9 @@ PImage mute2;
 
 void setup() 
 {
+  //set the window size
   size (1920,1080);
+  //set the background color to black;
   background(0);
 
   runningMovie = new Movie (this,"sunset.mp4");
@@ -33,7 +38,9 @@ void setup()
   mute2 = loadImage("mute2.png");
   mute1 = loadImage("mute1.png");
   
+  //loadXML loads the xml from data within in folder, which I initally got from Polar.com
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
+  // Get the children of the Trackpoint - working down into the .xml file 
   children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
   
   radius = new int[children.length];
