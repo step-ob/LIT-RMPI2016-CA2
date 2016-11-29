@@ -41,6 +41,7 @@ void setup()
 void draw ()
 {
   image(runningMovie, 0, 0);
+  heartBeat ();
 }
 
 
