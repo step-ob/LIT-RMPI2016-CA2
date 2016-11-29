@@ -63,3 +63,10 @@ void keyPressed ()
     }
   }
 }
+
+void heartBeat () 
+{
+  ellipse (width/2, height/2, radius, radius);
+  fill (255);
+  noStroke();
+}
