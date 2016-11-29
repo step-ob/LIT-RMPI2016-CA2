@@ -33,7 +33,7 @@ void setup()
   
   for (int i=0; i<children.length;i++)
   {
-    radius [i] = (children[i].getChild("HeartRateBpm").getChild("Vale").getIntContent());
+    radius [i] = (children[i].getChild("HeartRateBpm").getChild("Value").getIntContent());
     //println(v);
     //radius = Integer.parseInt(v.trim());
     println(radius[i]);
