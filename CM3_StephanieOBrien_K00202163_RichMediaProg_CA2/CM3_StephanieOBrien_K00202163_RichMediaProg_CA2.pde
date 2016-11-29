@@ -69,20 +69,23 @@ void setup()
 
 void draw ()
 {
-  //
+  //function image to draw movie name, x position, y position
   image(runningMovie, 0, 0);
-
+  //function image to draw image name, x position, y position
   image(mute2, 1800, 970);
 
   heartBeat ();
   
+  //loading font from data folder 
   font = loadFont ("bromello-32.vlw");
+  //The font set will be used in all subsequent calls and size
   textFont(font, 52);
   smooth();
   fill(100, 197, 221);
+  //function text displays character within " ", x position, y position 
   text("Stephanie O Brien", width/2-200, height/14);
   text("Heat Rate Bpm " + radius[k], width/2-150, height/8);
-  
+  //the k int inside the arrary to loop, from 0 to the length of the children array
   if (k <= children.length-2)
   {
     k++;
@@ -101,13 +104,12 @@ void movieEvent (Movie runningMovie)
 
 void keyPressed ()
 {
+  //if M or m is pressed the song will loop to see if it is playing and pause or play it
   if  (key == 'm' || key == 'M' )
   {
     if (song.isPlaying () )
     {
       song.pause ();
-      mute2.resize(0, 1);
-
     }
     else
     {
@@ -118,10 +120,12 @@ void keyPressed ()
 
 void heartBeat () 
 {
+  //changing the colour its alpha value with the radius array
   fill (100, 197, 221, radius[j]);
+  //changing the size of the shape with the radius array
   ellipse (width/2, height/2, radius[j]*5, radius[j]*5);
   noStroke();
-  
+  //the j int inside the arrary to loop, from 0 to the length of the children array
   if (j <= children.length-2)
   {
     j++;
