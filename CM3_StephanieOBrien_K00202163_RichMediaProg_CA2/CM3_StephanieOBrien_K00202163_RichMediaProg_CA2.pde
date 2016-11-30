@@ -4,17 +4,18 @@ import processing.video.*;
 //Import Minim library for audio - everything within the library
 import ddf.minim.*;
 
-//Declare object
+//This list is of Global object and Global variables
+//Declare object 'runningMovie' of Movie
 Movie runningMovie;
-//Declare object
+//Declare object 'songBackground' of Minim
 Minim songBackground;
-//Declare object
+//Declare object 'song' of AudioPlayer
 AudioPlayer song;
 //Declare object
 XML polarData;
-//Declare an array globally (we will create and initialise the array later)
+//Declare an array
 XML [] children;
-//Declare an array globally (we will create and initialise the array later)
+//Declare an array
 int [] radius;
 //Declare variable 'i' of type int
 int j;
@@ -30,7 +31,7 @@ PImage muteImg;
 
 void setup() 
 {
-  //set frames per seocnd
+  //set frames per seocnds
   frameRate(10);
   //set the window size
   size (1920,1080);
@@ -41,6 +42,7 @@ void setup()
   runningMovie = new Movie (this,"sunset.mp4");
   runningMovie.loop();
   
+  //Creating an instance of Minim named songBackground
   songBackground = new Minim(this);
   //Load a sound file from data folder and plays it back in loop, bufferSize
   song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 512);
@@ -52,10 +54,9 @@ void setup()
   
   //loadXML loads the xml from data within in folder, which I initally got from Polar.com
   polarData = loadXML("Stephanie_O+Brien_2016-11-27_16-52-04.xml");
-  //Returns the children of the Trackpoint elements and storage in the children - working down into the .xml file 
-  
+  //Returns the children of the Trackpoint data and storage in the children - working down into the .xml file 
   children = polarData.getChild("Activities").getChild("Activity").getChild("Lap").getChild("Track").getChildren("Trackpoint");
-  //create new radius array
+  //create new radius array to storage list of data
   radius = new int[children.length];
   //looping through the children array to get further data from the 
   for (int i=0; i<children.length;i++)
