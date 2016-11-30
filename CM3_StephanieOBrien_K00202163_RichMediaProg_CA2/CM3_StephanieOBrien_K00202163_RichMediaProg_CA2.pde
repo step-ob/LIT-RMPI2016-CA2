@@ -30,6 +30,7 @@ PImage muteImg;
 
 void setup() 
 {
+  //set frames per seocnd
   frameRate(10);
   //set the window size
   size (1920,1080);
@@ -41,8 +42,8 @@ void setup()
   runningMovie.loop();
   
   songBackground = new Minim(this);
-  //Load a sound file from data folder and plays it back in loop 
-  song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav");
+  //Load a sound file from data folder and plays it back in loop, bufferSize
+  song = songBackground.loadFile ("Hearbeat_2-Mike_Koenig-143666461.wav", 512);
   song.play();
   song.loop();
   
@@ -80,6 +81,7 @@ void draw ()
   font = loadFont ("bromello-32.vlw");
   //The font set will be used in all subsequent calls and size
   textFont(font, 52);
+  //draws all geometry with smooth (anti-aliased) edges
   smooth();
   fill(100, 197, 221);
   //function text displays character within " ", x position, y position 
@@ -97,6 +99,21 @@ void draw ()
   {
     k=0;
   }
+  
+  smooth();
+  noStroke();
+  fill(200,0,0);
+  beginShape();
+  vertex(width/2, 480); 
+  bezierVertex(width/2, 450, width/2+90, 460, width/2, 550);
+  vertex(width/2, 480); 
+  bezierVertex(width/2, 450, width/2-90, 460, width/2, 550);
+  vertex(width/2, 620); 
+  bezierVertex(width/2, 650, width/2-90, 640, width/2, 550);
+  vertex(width/2, 620); 
+  bezierVertex(width/2, 650, width/2+90, 640, width/2, 550);
+  endShape();
+
 }
 
 //call every time a new frame is available to read
