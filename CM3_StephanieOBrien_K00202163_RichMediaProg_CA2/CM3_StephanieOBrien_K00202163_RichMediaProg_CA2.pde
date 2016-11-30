@@ -87,7 +87,7 @@ void draw ()
   fontHeart = loadFont("Garamond-Bold-48.vlw");
   textFont(fontHeart, 36);
   text("Heart Rate Beat per minute: " + radius[k], width/2-250, height/8);
-  text("over 5 minute ~ starting at 63 finishing up to 138", width/2-380, height/3+600);
+  text("over 5 minute ~ starting at 63 finishing at 138", width/2-380, height/3+600);
   //the k int inside the arrary to loop, from 0 to the length of the children array
   if (k <= children.length-2)
   {
@@ -99,10 +99,9 @@ void draw ()
   }
 }
 
-
+//call every time a new frame is available to read
 void movieEvent (Movie runningMovie) 
 {
-  //
   runningMovie.read();
 }
 
@@ -110,6 +109,26 @@ void keyPressed ()
 {
   //if M or m is pressed the song will loop to see if it is playing and pause or play it
   if  (key == 'm' || key == 'M' )
+  {
+    if (song.isPlaying () )
+    {
+      song.pause ();
+      //change the muteImg load image from data folder - music logo off
+      muteImg = loadImage("mute1.png");
+    }
+    else
+    {
+      song.play();
+      //change the muteImg load image from data folder - music logo on
+      muteImg = loadImage("mute2.png");
+    }
+  }
+}
+
+void mousePressed ()
+{
+  //if M or m is pressed the song will loop to see if it is playing and pause or play it
+  if  (mousePressed == true)
   {
     if (song.isPlaying () )
     {
